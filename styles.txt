@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+nav h1 {
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 1em;
+    background-color: #d8ff8a;
+    background-image: url('path/to/your/background-pattern.png');
+    background-size: cover;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-text h2 span {
+    color: #aa00ff;
+}
+
+.hero-text p {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.hero-text .btn {
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-image {
+    max-width: 40%;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    border: 5px solid #aa00ff;
+    width: 100%;
+}
+
+#projects {
+    padding: 2em 1em;
+    background-color: #d8ff8a;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+}
+
+#contact {
+    padding: 2em 1em;
+    background-color: #aa00ff;
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    color: #333;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form .btn {
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

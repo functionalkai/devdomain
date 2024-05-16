@@ -1,0 +1,441 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8ff8a;
+    color: #333;
+    transition: opacity 0.5s ease-in-out;
+    background: linear-gradient(135deg, hsl(138, 100%, 60%), #c3ff1e, #0f6);
+    background-size: 400% 400%;
+    animation: gradient-animation 50s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Base styles for the nav */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Adjust as needed */
+    padding: 10px 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Adjust as needed */
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a.contact-btn {
+    background-color: purple; /* Adjust as needed */
+    color: #fff; /* Adjust as needed */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header nav ul li a.contact-btn:hover {
+    background-color: darkpurple; /* Adjust as needed */
+}
+
+header nav h1 {
+    margin: 0;
+}
+
+header nav h1 a {
+    text-decoration: none;
+    color: #fff; /* Adjust as needed */
+}
+
+/* Hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    background: #fff; /* Adjust as needed */
+    height: 3px;
+    width: 25px;
+    margin: 4px;
+    transition: 0.3s;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust based on your header height */
+        left: 0;
+        background-color: #000; /* Adjust as needed */
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links li a {
+        padding: 15px;
+    }
+}
+
+
+#hero {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+
+.hero-box {
+    background-color: white;
+    display: flex;
+    margin: auto;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    width: 80%;
+    height: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hero-text, .hero-image {
+    margin:35px;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-text h2 span {
+    color: #aa00ff;
+}
+
+.hero-text p {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.hero-text .btn {
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-text .btn:hover {
+    background-color: #aa00ff;
+}
+
+.hero-image img {
+    border-radius: 50%;
+    border: 5px transparent #aa00ff;
+    width: 100%;
+    box-shadow: 5 5 20px rgba(0,0,0,0.1);
+}
+
+#about-me, #projects, #contact {
+    padding: 2em 1em;
+    text-align: center;
+}
+
+#about-me p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+#projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    background-color: white;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
+.project-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.project {
+    position: relative;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 30%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.project-content {
+    position: relative;
+    z-index: 1;
+}
+
+.project-content h3 {
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    z-index: 2;
+    position: relative;
+}
+
+.project-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project:hover .project-image {
+    transform: scale(1.1);
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+#contact {
+    background-color: #aa00ff;
+    color: #fff;
+    position: relative;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    color: #333;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact form .btn {
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .footer-content .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em 1em;
+}
+
+footer .footer-content .contact-info a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+footer .footer-content .contact-info a:hover {
+    color: #aa00ff;
+}
+
+footer .footer-content .copyright {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-content p {
+    margin: 0;
+}
+
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-me h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+
+.skills-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    flex-wrap: wrap; /* Ensure the icons wrap if there's not enough space */
+    gap: 20px; /* Adjust the gap between icons */
+    margin-top: 20px; /* Add some margin at the top */
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-container i {
+    font-size: 3rem; /* Adjust the size of the icons */
+    margin-bottom: 10px; /* Add some margin below the icons for spacing */
+}
+
+.tooltip {
+    margin-top: 5px;
+    text-align: center;
+    display: block;
+}
+
+.icon-container {
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    cursor: pointer;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the icon */
+    left: 50%;
+    margin-left: -60px; /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.icon-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.contact-btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-btn {
+    background-color: #d8ff8a; /* Default green for contact page */
+}
+
+body#home-page .contact-btn,
+body#about-page .contact-btn,
+body#projects-page .contact-btn {
+    background-color: #aa00ff;
+}
